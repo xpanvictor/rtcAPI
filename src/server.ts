@@ -38,6 +38,7 @@ if (envVars.nodeEnv === 'production') {
 // **** Add API routes **** //
 
 // Add APIs
+// app.use('/peerjs', peerjs)
 app.use('/api', BaseRouter);
 
 // Error handling
@@ -63,7 +64,7 @@ app.use(express.static(staticDir));
 
 // Nav to login pg by default
 app.get('/', (_: Request, res: Response) => {
-  res.sendFile('login.html', {root: viewsDir});
+  res.send('Welcome to the webRTC api index, check postman for documentation.')
 });
 
 // Redirect to login if not logged in.
